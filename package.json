@@ -1,0 +1,22 @@
+{
+  "name": "chronchron",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hmzoo/chronchron.git"
+  },
+  "author": "HMJ",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hmzoo/chronchron/issues"
+  },
+  "homepage": "https://github.com/hmzoo/chronchron#readme",
+  "dependencies": {
+    "selenium-webdriver": "^4.1.2"
+  }
+}
