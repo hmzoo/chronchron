@@ -1,7 +1,7 @@
 const { Builder, Browser, By, Key, until } = require('selenium-webdriver');
 
  let scriptBadge= "Pointage()";
-// let scriptBadge= "genPopup('test')";
+ //let scriptBadge= "genPopup('test')";
 
 
 
