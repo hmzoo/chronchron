@@ -6,10 +6,11 @@ var axios = require('axios');
  
 parser = new xml2js.Parser();
 let objmin = 470;
-let limit_matin=moment('08:00', 'hh:mm');
+let limit_matin=moment('09:15', 'hh:mm');
 let limit_pmidi=moment('11:30', 'hh:mm');
 let limit_rmidi=moment('14:00', 'hh:mm');
-let limit_soir=moment('16:30', 'hh:mm');
+let limit_soir=moment('16:15', 'hh:mm');
+let limit_secumidi = moment('13:30', 'hh:mm');
 
 
 
@@ -37,14 +38,19 @@ buildAnswer = (data) => {
     var now = moment(new Date());
     var totalduration =0;
     var tolimit =0;
+
     switch (data.length) {
+      case 0 :
+        totalduration =  0;
+        tolimit = hdiff(now,limit_matin);
+        break;
       case 1 :
         totalduration =  hdiff(data[0],now);
         tolimit = hdiff(limit_pmidi,now);
         break;
       case 2 :
         totalduration =  hdiff(data[0],data[1]);
-        var tolimit = 0;
+        var tolimit = hdiff(limit_secumidi,now);
         break;
       case 3 :
         totalduration =  hdiff(data[0],data[1])+hdiff(data[2],now);
@@ -56,7 +62,7 @@ buildAnswer = (data) => {
         break;
       default :
       totalduration = 0
-      var tolimit =0;
+      var tolimit =-1;
     }
 
     return {

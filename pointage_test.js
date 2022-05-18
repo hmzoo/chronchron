@@ -9,7 +9,7 @@ driverBuilder.build().then( (driver) => {
     driver.wait(until.titleIs('Self Service'), 60000).then(() => {
         console.log("WINDOWS OPEN");
         setTimeout(function() {
-          driver.executeScript("Pointage()").then(() => console.log("Pointage OK")).catch((err) => console.log("Pointage NOK",err)); 
+  //        driver.executeScript("Pointage()").then(() => console.log("Pointage OK")).catch((err) => console.log("Pointage NOK",err)); 
         }, 3000);
     });
 
